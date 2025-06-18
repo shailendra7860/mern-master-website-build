@@ -3,48 +3,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+/* Modern Design System with Deep Navy + Neon Cyan */
 
 @layer base {
   :root {
-    --background: 220 18% 8%;
-    --foreground: 220 5% 95%;
+    --background: 218 23% 8%;
+    --foreground: 218 10% 95%;
 
-    --card: 220 18% 10%;
-    --card-foreground: 220 5% 95%;
+    --card: 218 23% 10%;
+    --card-foreground: 218 10% 95%;
 
-    --popover: 220 18% 10%;
-    --popover-foreground: 220 5% 95%;
+    --popover: 218 23% 10%;
+    --popover-foreground: 218 10% 95%;
 
-    --primary: 200 100% 50%;
-    --primary-foreground: 220 18% 8%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 218 23% 8%;
 
-    --secondary: 160 100% 40%;
-    --secondary-foreground: 220 18% 8%;
+    --secondary: 285 100% 60%;
+    --secondary-foreground: 218 23% 8%;
 
-    --muted: 220 13% 15%;
-    --muted-foreground: 220 5% 60%;
+    --muted: 218 16% 15%;
+    --muted-foreground: 218 10% 60%;
 
-    --accent: 200 100% 50%;
-    --accent-foreground: 220 18% 8%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 218 23% 8%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 220 13% 20%;
-    --input: 220 13% 20%;
-    --ring: 200 100% 50%;
+    --border: 218 16% 20%;
+    --input: 218 16% 20%;
+    --ring: 180 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
-    --sidebar-background: 220 18% 8%;
-    --sidebar-foreground: 220 5% 95%;
-    --sidebar-primary: 200 100% 50%;
-    --sidebar-primary-foreground: 220 18% 8%;
-    --sidebar-accent: 220 13% 15%;
-    --sidebar-accent-foreground: 220 5% 95%;
-    --sidebar-border: 220 13% 20%;
-    --sidebar-ring: 200 100% 50%;
+    --sidebar-background: 218 23% 8%;
+    --sidebar-foreground: 218 10% 95%;
+    --sidebar-primary: 180 100% 50%;
+    --sidebar-primary-foreground: 218 23% 8%;
+    --sidebar-accent: 218 16% 15%;
+    --sidebar-accent-foreground: 218 10% 95%;
+    --sidebar-border: 218 16% 20%;
+    --sidebar-ring: 180 100% 50%;
   }
 }
 
@@ -55,6 +55,9 @@
 
   body {
     @apply bg-background text-foreground font-inter;
+    background-image: 
+      radial-gradient(circle at 25% 25%, rgba(0, 245, 255, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
   }
 
   html {
@@ -64,19 +67,69 @@
 
 @layer components {
   .gradient-bg {
-    background: linear-gradient(135deg, hsl(220, 18%, 8%) 0%, hsl(220, 18%, 12%) 100%);
+    background: linear-gradient(135deg, hsl(218, 23%, 8%) 0%, hsl(218, 23%, 12%) 100%);
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(200, 100%, 50%) 0%, hsl(160, 100%, 40%) 100%);
+    background: linear-gradient(135deg, hsl(180, 100%, 50%) 0%, hsl(285, 100%, 60%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
+
+  .glass-button {
+    background: rgba(0, 245, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 245, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .glass-button:hover {
+    background: rgba(0, 245, 255, 0.2);
+    border-color: rgba(0, 245, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 245, 255, 0.2);
+  }
+
+  .neo-card {
+    background: linear-gradient(145deg, hsl(218, 23%, 10%), hsl(218, 23%, 8%));
+    box-shadow: 
+      8px 8px 20px rgba(0, 0, 0, 0.4),
+      -8px -8px 20px rgba(255, 255, 255, 0.02);
+    border-radius: 16px;
+  }
+
+  .floating-animation {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .tilt-card {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease-out;
+  }
+
+  .tilt-card:hover {
+    transform: rotateX(5deg) rotateY(5deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 245, 255, 0.6); }
+}
+
+.glow-animation {
+  animation: glow 2s ease-in-out infinite alternate;
 }
