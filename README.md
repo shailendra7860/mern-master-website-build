@@ -1,73 +1,95 @@
-# Welcome to your Lovable project
+# 🚀 MERN Stack Developer Portfolio
 
-## Project info
+Welcome to my personal portfolio website!  
+I’m a passionate Full Stack Developer with over **5+ years of experience** building dynamic, scalable, and performant web applications using the **MERN Stack** (MongoDB, Express.js, React.js, Node.js).
 
-**URL**: https://lovable.dev/projects/1354fe7a-c0f6-4032-ae99-499c8f8ccfb4
+This portfolio showcases my expertise, past projects, services, and contact information for freelance and client-based work.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 📌 Live Demo
+🔗 [Visit My Portfolio](https://your-portfolio-url.com)
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1354fe7a-c0f6-4032-ae99-499c8f8ccfb4) and start prompting.
+## 🛠️ Tech Stack
 
-Changes made via Lovable will be committed automatically to this repo.
+This project is built using the following technologies:
 
-**Use your preferred IDE**
+- **Frontend:** React.js, Tailwind CSS / Material UI, React Router
+- **Backend:** Node.js, Express.js
+- **Database:** MongoDB + Mongoose
+- **Authentication:** JWT, OAuth (Google/GitHub)
+- **Deployment:** Vercel (Frontend), Render / Railway (Backend), MongoDB Atlas
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Features
 
-Follow these steps:
+- 🧑‍💻 About Me section
+- 🛠️ Skills & Tech Stack
+- 💼 Project Gallery with case studies
+- 📊 Admin Dashboard demo (optional for clients)
+- 📞 Contact form (with email service integration)
+- 📄 Resume download
+- 🌗 Light/Dark mode toggle
+- 💬 Blog or writing section (optional)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+---
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📸 Screenshots
 
-# Step 3: Install the necessary dependencies.
-npm i
+| Home Page | Projects | Contact |
+|----------|----------|--------|
+| ![Home](./screenshots/home.png) | ![Projects](./screenshots/projects.png) | ![Contact](./screenshots/contact.png) |
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+---
+
+## 🧪 Installation (Local Development)
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/mern-portfolio.git
+cd mern-portfolio
+
+# Install frontend dependencies
+cd client
+npm install
+
+# Install backend dependencies
+cd ../server
+npm install
+
+# Create environment variables
+touch .env
+
+PORT=5000
+MONGO_URI=your_mongo_uri
+JWT_SECRET=your_jwt_secret
+EMAIL_USER=your_email
+EMAIL_PASS=your_password
+
+
+🚀 Run Locally
+
+# Run backend
+cd server
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+# Run frontend
+cd client
+npm start
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🙌 Acknowledgements
+React documentation
 
-**Use GitHub Codespaces**
+MongoDB University
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Tailwind UI
 
-## What technologies are used for this project?
+Freepik & Iconscout (icons used)
 
-This project is built with:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/1354fe7a-c0f6-4032-ae99-499c8f8ccfb4) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Let me know if you'd like a **version with dynamic project fetching from a CMS or backend**, or if you want a **Fiverr-branded version for clients**.
