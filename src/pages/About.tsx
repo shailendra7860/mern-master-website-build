@@ -48,11 +48,11 @@ const About = () => {
       {/* Hero Section */}
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-4xl text-yellow-300 mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              About <span className="text-gradient">Me</span>
+              About <span className="">Me</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white text-muted-foreground">
               Passionate MERN Stack developer with 5+ years of experience building 
               scalable web applications for startups and growing businesses.
             </p>

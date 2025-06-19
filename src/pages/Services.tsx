@@ -79,10 +79,10 @@ const Services = () => {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Services <span className="text-gradient">Offered</span>
+            <h1 className="text-5xl text-yellow-300 md:text-6xl font-bold mb-6">
+              Services <span className="">Offered</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white text-muted-foreground">
               Comprehensive MERN stack development services to bring your ideas to life 
               and scale your business.
             </p>
@@ -91,7 +91,7 @@ const Services = () => {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-background">
+      <section className="pt-20 bg-background">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
@@ -137,10 +137,10 @@ const Services = () => {
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                Development <span className="text-gradient">Process</span>
+              <h2 className="text-4xl text-yellow-300 md:text-5xl font-bold mb-6">
+                Development <span className="">Process</span>
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-xl text-white text-muted-foreground max-w-2xl mx-auto">
                 A streamlined approach to deliver exceptional results on time and within budget
               </p>
             </div>
@@ -151,10 +151,10 @@ const Services = () => {
                   <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-6 flex items-center justify-center text-background font-bold text-xl group-hover:scale-110 transition-transform duration-300 glow-animation">
                     {item.step}
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 group-hover:text-primary transition-colors">
+                  <h3 className="text-xl font-semibold mb-4 group-hover:text-primary text-zinc-900 transition-colors">
                     {item.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
+                  <p className="text-muted-foreground text-sm text-white leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -162,7 +162,7 @@ const Services = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button asChild size="lg" className="glass-button">
+              <Button asChild size="lg" className="glow-button">
                 <Link to="/contact">Start Your Project</Link>
               </Button>
             </div>

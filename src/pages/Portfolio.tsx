@@ -88,10 +88,10 @@ const Portfolio = () => {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Featured <span className="text-gradient">Projects</span>
+            <h1 className="text-5xl text-yellow-300 md:text-6xl font-bold mb-6">
+              Featured <span className="">Projects</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white text-muted-foreground">
               A showcase of successful MERN stack applications I've built for 
               startups and businesses across various industries.
             </p>
@@ -121,13 +121,13 @@ const Portfolio = () => {
               {filteredProjects.map((project, index) => (
                 <Card 
                   key={index} 
-                  className="neo-card border-0 hover:scale-105 transition-all duration-300 group overflow-hidden"
+                  className="neo-card border-0 hover:scale-103 transition-all duration-200 group overflow-hidden"
                 >
                   <div className="relative overflow-hidden">
                     <img 
                       src={`https://images.unsplash.com/${project.image}?w=600&h=300&fit=crop`}
                       alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-200"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <div className="flex gap-2">

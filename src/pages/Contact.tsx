@@ -1,20 +1,21 @@
-
-import { useState } from 'react';
-import { Mail, Linkedin, Github, Send, Clock, CheckCircle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { Mail, Linkedin, Github, Send, Clock, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    budget: '',
-    timeline: '',
-    project: ''
+    name: "",
+    email: "",
+    contact: "",
+    budget: "",
+    timeline: "",
+    project: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -22,54 +23,65 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent successfully!",
-        description: "I'll get back to you within 24 hours.",
-      });
-      setFormData({ name: '', email: '', company: '', budget: '', timeline: '', project: '' });
-      setIsSubmitting(false);
-    }, 1000);
+    var templateParams = {
+      time: new Date().toLocaleString(),
+      name: formData?.name,
+      message: `Hi, my name is ${formData?.name}, contact number ${formData?.contact} and I would like to discuss a project with you. budget:${formData?.budget}, timeline:${formData?.timeline} here are the details: ${formData?.project}.`,
+      email: formData?.email,
+    };
+    emailjs
+      .send("service_9bludry", "template_90s186f", templateParams, {
+        publicKey: "z4Kjc3kCDC2wIvTxQ",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          toast({
+            title: "Message sent successfully!",
+            description: "I'll get back to you within 24 hours.",
+          });
+          setFormData({ name: "", email: "", contact: "", budget: "", timeline: "", project: "" });
+          setIsSubmitting(false);
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+          toast({
+            title: "Something went wrong!",
+            description: "Please try again.",
+          });
+        }
+      );
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
-      value: 'alex@example.com',
-      href: 'mailto:alex@example.com'
+      label: "Email",
+      value: "shailendramis01@gmail.com",
+      href: "mailto:shailendramis01@gmail.com",
     },
     {
       icon: Linkedin,
-      label: 'LinkedIn',
-      value: 'linkedin.com/in/alexrivera',
-      href: 'https://linkedin.com/in/alexrivera'
+      label: "LinkedIn",
+      value: "linkedin.com/in/shailendramishra",
+      href: "https://linkedin.com/in/shailendramishra",
     },
     {
       icon: Github,
-      label: 'GitHub',
-      value: 'github.com/alexrivera',
-      href: 'https://github.com/alexrivera'
-    }
+      label: "GitHub",
+      value: "github.com/shailendramishra",
+      href: "https://github.com/shailu7860",
+    },
   ];
 
-  const services = [
-    'Custom Web Application',
-    'API Development',
-    'Frontend Development',
-    'Backend Architecture',
-    'Database Design',
-    'Maintenance & Support'
-  ];
+  const services = ["Custom Web Application", "API Development", "Frontend Development", "Backend Architecture", "Database Design", "Maintenance & Support"];
 
   return (
     <div className="pt-20">
@@ -77,13 +89,10 @@ const Contact = () => {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Let's Build Something <span className="text-gradient">Amazing</span>
+            <h1 className="text-5xl text-main md:text-6xl font-bold mb-6">
+              Let's Build Something <span className="text-yellow-300">Amazing</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
-              Have an idea? Let's discuss how I can help bring your vision to life 
-              with modern web technologies.
-            </p>
+            <p className="text-xl text-white text-muted-foreground">Have an idea? Let's discuss how I can help bring your vision to life with modern web technologies.</p>
           </div>
         </div>
       </section>
@@ -98,9 +107,7 @@ const Contact = () => {
                 <Card className="neo-card border-0">
                   <CardHeader>
                     <CardTitle className="text-2xl">Send Me a Message</CardTitle>
-                    <p className="text-muted-foreground">
-                      Fill out the form below and I'll get back to you within 24 hours.
-                    </p>
+                    <p className="text-muted-foreground">Fill out the form below and I'll get back to you within 24 hours.</p>
                   </CardHeader>
                   <CardContent>
                     <form onSubmit={handleSubmit} className="space-y-6">
@@ -109,49 +116,23 @@ const Contact = () => {
                           <label htmlFor="name" className="block text-sm font-medium mb-2">
                             Your Name *
                           </label>
-                          <Input
-                            id="name"
-                            name="name"
-                            type="text"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="John Doe"
-                            required
-                            className="glass-card border-border/50"
-                          />
+                          <Input id="name" name="name" type="text" value={formData.name} onChange={handleChange} placeholder="John Doe" required className="glass-card border-border/50" />
                         </div>
 
                         <div>
                           <label htmlFor="email" className="block text-sm font-medium mb-2">
                             Email Address *
                           </label>
-                          <Input
-                            id="email"
-                            name="email"
-                            type="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="john@example.com"
-                            required
-                            className="glass-card border-border/50"
-                          />
+                          <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" required className="glass-card border-border/50" />
                         </div>
                       </div>
 
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <label htmlFor="company" className="block text-sm font-medium mb-2">
-                            Company/Organization
+                            Contact Number
                           </label>
-                          <Input
-                            id="company"
-                            name="company"
-                            type="text"
-                            value={formData.company}
-                            onChange={handleChange}
-                            placeholder="Your Company"
-                            className="glass-card border-border/50"
-                          />
+                          <Input id="company" name="company" type="number" value={formData.contact} onChange={handleChange} placeholder="1234567890" className="glass-card border-border/50" />
                         </div>
 
                         <div>
@@ -210,14 +191,9 @@ const Contact = () => {
                         />
                       </div>
 
-                      <Button 
-                        type="submit" 
-                        className="w-full glass-button"
-                        disabled={isSubmitting}
-                        size="lg"
-                      >
+                      <Button type="submit" className="w-full glass-button" disabled={isSubmitting} size="lg">
                         {isSubmitting ? (
-                          'Sending...'
+                          "Sending..."
                         ) : (
                           <>
                             Send Message <Send className="w-4 h-4 ml-2" />
@@ -235,17 +211,15 @@ const Contact = () => {
                 <Card className="neo-card border-0">
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
-                    <p className="text-muted-foreground mb-6 text-sm">
-                      Ready to start your project? Choose your preferred way to connect.
-                    </p>
-                    
+                    <p className="text-muted-foreground mb-6 text-sm">Ready to start your project? Choose your preferred way to connect.</p>
+
                     <div className="space-y-4">
                       {contactInfo.map((contact, index) => (
-                        <a 
+                        <a
                           key={index}
                           href={contact.href}
-                          target={contact.href.startsWith('mailto') ? undefined : '_blank'}
-                          rel={contact.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                          target={contact.href.startsWith("mailto") ? undefined : "_blank"}
+                          rel={contact.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                           className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors group"
                         >
                           <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
@@ -283,10 +257,7 @@ const Contact = () => {
                       <Clock className="w-6 h-6 text-primary" />
                       <h4 className="text-lg font-semibold">Quick Response</h4>
                     </div>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      I typically respond to all inquiries within 24 hours. For urgent 
-                      projects, same-day consultation calls are available.
-                    </p>
+                    <p className="text-sm text-muted-foreground mb-4">I typically respond to all inquiries within 24 hours. For urgent projects, same-day consultation calls are available.</p>
                     <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-background">
                       Schedule a Call
                     </Button>

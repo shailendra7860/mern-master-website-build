@@ -80,6 +80,9 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+   .text-main {
+    color:  #2E6F40 !important;
+  }
 
   .rainbow-text {
     background: linear-gradient(135deg, #2E6F40, #68BA7F, #CFFFDC);

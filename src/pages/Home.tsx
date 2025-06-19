@@ -153,10 +153,10 @@ const Home = () => {
         <div className="container mx-auto px-6 text-center relative z-10">
           <div className="max-w-5xl mx-auto animate-fade-in">
             {/* Availability Status */}
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 text-white">
+            {/* <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6 text-white">
               <div className="w-3 h-3 bg-green-400 rounded-full pulse-glow"></div>
               <span className="text-sm font-medium">Available for Projects</span>
-            </div>
+            </div> */}
 
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-white">
               Hi, I'm{' '}
@@ -173,7 +173,7 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <Button asChild size="lg" className="glow-button text-white text-lg px-8 py-3">
+              <Button style={{backgroundColor:"#37814c"}} asChild size="lg" className="glow-button text-white text-lg px-8 py-3">
                 <Link to="/portfolio">
                   View My Work <ArrowRight className="w-5 h-5 ml-2" />
                 </Link>

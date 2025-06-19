@@ -80,7 +80,7 @@ const Testimonials = () => {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-5xl md:text-6xl text-yellow-300 font-bold mb-6 text-white">
               Client <span className="text-gradient">Testimonials</span>
             </h1>
             <p className="text-xl text-white/90">
