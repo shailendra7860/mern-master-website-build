@@ -1,3 +1,4 @@
+
 import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -8,7 +9,7 @@ const Testimonials = () => {
       name: 'Sarah Chen',
       role: 'Founder',
       company: 'TechStart Innovations',
-      content: 'Alex built our MVP faster than we imagined. His technical expertise and attention to detail are exceptional. Our platform now serves 10,000+ users seamlessly.',
+      content: 'Shailendra built our MVP faster than we imagined. His technical expertise and attention to detail are exceptional. Our platform now serves 10,000+ users seamlessly.',
       avatar: 'photo-1494790108755-2616b612b5bb',
       rating: 5,
       project: 'E-Commerce Platform',
@@ -18,7 +19,7 @@ const Testimonials = () => {
       name: 'Michael Rodriguez',
       role: 'CTO',
       company: 'GrowthLabs',
-      content: 'Working with Alex was a game-changer for our startup. He delivered a scalable solution that grew with us from 100 to 50,000 users without missing a beat.',
+      content: 'Working with Shailendra was a game-changer for our startup. He delivered a scalable solution that grew with us from 100 to 50,000 users without missing a beat.',
       avatar: 'photo-1472099645785-5658abf4ff4e',
       rating: 5,
       project: 'Task Management SaaS',
@@ -28,7 +29,7 @@ const Testimonials = () => {
       name: 'Emily Thompson',
       role: 'Product Manager',
       company: 'FinanceFlow',
-      content: 'Alex\'s ability to understand complex business requirements and translate them into clean, efficient code is remarkable. Highly recommended for any serious project.',
+      content: 'Shailendra\'s ability to understand complex business requirements and translate them into clean, efficient code is remarkable. Highly recommended for any serious project.',
       avatar: 'photo-1438761681033-6461ffad8d80',
       rating: 5,
       project: 'Financial Analytics Tool',
@@ -38,7 +39,7 @@ const Testimonials = () => {
       name: 'David Park',
       role: 'CEO',
       company: 'HealthTech Solutions',
-      content: 'The healthcare dashboard Alex built for us exceeded all expectations. HIPAA compliance, security, and user experience - all handled perfectly.',
+      content: 'The healthcare dashboard Shailendra built for us exceeded all expectations. HIPAA compliance, security, and user experience - all handled perfectly.',
       avatar: 'photo-1507003211169-0a1dd7228f2d',
       rating: 5,
       project: 'Healthcare Dashboard',
@@ -48,7 +49,7 @@ const Testimonials = () => {
       name: 'Lisa Wang',
       role: 'Startup Founder',
       company: 'EduPlatform',
-      content: 'From concept to launch, Alex guided us through every step. The learning platform he built now serves thousands of students worldwide.',
+      content: 'From concept to launch, Shailendra guided us through every step. The learning platform he built now serves thousands of students worldwide.',
       avatar: 'photo-1494790108755-2616b612b5bb',
       rating: 5,
       project: 'Social Learning Platform',
@@ -79,10 +80,10 @@ const Testimonials = () => {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white">
               Client <span className="text-gradient">Testimonials</span>
             </h1>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl text-white/90">
               Don't just take my word for it. Here's what my clients say about 
               working with me on their projects.
             </p>
@@ -114,7 +115,7 @@ const Testimonials = () => {
               {testimonials.map((testimonial, index) => (
                 <Card 
                   key={index} 
-                  className="neo-card border-0 hover:scale-105 transition-all duration-300 group"
+                  className="glass-card border-0 hover:scale-105 transition-all duration-300 group"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <CardContent className="p-6 relative">
@@ -169,18 +170,18 @@ const Testimonials = () => {
       <section className="py-20 gradient-bg">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
               Ready to Join My <span className="text-gradient">Success Stories?</span>
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Let's discuss how I can help bring your project to life and deliver 
               the same exceptional results my clients have experienced.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="glass-button text-lg px-8 py-3" asChild>
+              <Button size="lg" className="glow-button text-white text-lg px-8 py-3" asChild>
                 <a href="/contact">Start Your Project</a>
               </Button>
-              <Button variant="outline" size="lg" className="border-primary/30 text-lg px-8 py-3 hover:bg-primary/10" asChild>
+              <Button variant="outline" size="lg" className="border-white/30 text-white bg-white/10 hover:bg-white/20 text-lg px-8 py-3" asChild>
                 <a href="/portfolio">View Portfolio</a>
               </Button>
             </div>
