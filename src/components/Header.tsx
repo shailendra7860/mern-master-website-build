@@ -22,8 +22,8 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 glass-card">
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="text-2xl font-bold text-gradient">
-            Alex Rivera
+          <Link to="/" className="text-2xl font-bold rainbow-text">
+            Shailendra Mishra
           </Link>
 
           {/* Desktop Navigation */}
@@ -34,17 +34,17 @@ const Header = () => {
                 to={item.path}
                 className={`relative transition-colors ${
                   isActive(item.path)
-                    ? 'text-primary'
+                    ? 'text-primary font-semibold'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {item.name}
                 {isActive(item.path) && (
-                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary rounded-full" />
+                  <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-primary to-secondary rounded-full" />
                 )}
               </Link>
             ))}
-            <Button asChild className="glass-button">
+            <Button asChild className="glow-button text-white">
               <Link to="/contact">Get In Touch</Link>
             </Button>
           </div>
@@ -68,14 +68,14 @@ const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className={`block w-full text-left transition-colors ${
                   isActive(item.path)
-                    ? 'text-primary'
+                    ? 'text-primary font-semibold'
                     : 'text-muted-foreground hover:text-foreground'
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <Button asChild className="w-full glass-button">
+            <Button asChild className="w-full glow-button text-white">
               <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
                 Get In Touch
               </Link>

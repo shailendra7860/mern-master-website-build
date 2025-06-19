@@ -1,10 +1,17 @@
 
-import { Code, User } from 'lucide-react';
+import { Code, User, Award, Coffee } from 'lucide-react';
 
 const About = () => {
   const techStack = [
     'MongoDB', 'Express.js', 'React.js', 'Node.js', 'TypeScript', 'JavaScript',
     'Next.js', 'Git', 'Docker', 'REST APIs', 'GraphQL', 'AWS', 'Tailwind CSS'
+  ];
+
+  const funFacts = [
+    { icon: Code, label: 'Lines of Code Written', value: '500K+', color: 'text-primary' },
+    { icon: Coffee, label: 'Cups of Coffee', value: '2K+', color: 'text-secondary' },
+    { icon: Award, label: 'Projects Delivered', value: '50+', color: 'text-accent' },
+    { icon: User, label: 'Happy Clients', value: '30+', color: 'text-orange-500' }
   ];
 
   return (
@@ -21,13 +28,13 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
             <div className="animate-slide-in">
-              <div className="glass-card p-8 rounded-2xl">
+              <div className="electric-card p-8 rounded-2xl">
                 <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-6 flex items-center justify-center">
-                  <User className="w-16 h-16 text-background" />
+                  <User className="w-16 h-16 text-white" />
                 </div>
-                <h3 className="text-2xl font-semibold text-center mb-4">Alex Rivera</h3>
+                <h3 className="text-2xl font-semibold text-center mb-4">Shailendra Mishra</h3>
                 <p className="text-center text-muted-foreground">Full Stack MERN Developer</p>
               </div>
             </div>
@@ -57,8 +64,8 @@ const About = () => {
                   {techStack.map((tech, index) => (
                     <span 
                       key={index}
-                      className="px-3 py-1 bg-muted rounded-full text-sm text-muted-foreground 
-                               hover:bg-primary/20 hover:text-primary transition-colors cursor-default"
+                      className="tech-badge px-3 py-1 rounded-full text-sm 
+                               transition-colors cursor-default"
                     >
                       {tech}
                     </span>
@@ -66,6 +73,19 @@ const About = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Fun Facts */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {funFacts.map((fact, index) => (
+              <div key={index} className="text-center p-6 electric-card rounded-lg">
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center ${fact.color}`}>
+                  <fact.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-2xl font-bold text-gradient mb-2">{fact.value}</div>
+                <div className="text-sm text-muted-foreground">{fact.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

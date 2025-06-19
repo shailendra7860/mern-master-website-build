@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { Mail, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Linkedin, Github, Send, Clock } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -54,7 +54,7 @@ const Contact = () => {
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <Card className="bg-card border-border">
+            <Card className="electric-card border-0">
               <CardHeader>
                 <CardTitle className="text-2xl">Send Me a Message</CardTitle>
               </CardHeader>
@@ -72,7 +72,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="John Doe"
                       required
-                      className="w-full"
+                      className="w-full border-primary/30 focus:border-primary"
                     />
                   </div>
 
@@ -88,7 +88,7 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="john@example.com"
                       required
-                      className="w-full"
+                      className="w-full border-primary/30 focus:border-primary"
                     />
                   </div>
 
@@ -103,13 +103,13 @@ const Contact = () => {
                       onChange={handleChange}
                       placeholder="Tell me about your project, timeline, and requirements..."
                       required
-                      className="w-full min-h-[120px] resize-none"
+                      className="w-full min-h-[120px] resize-none border-primary/30 focus:border-primary"
                     />
                   </div>
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-primary hover:bg-primary/90"
+                    className="w-full glow-button text-white"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
@@ -126,7 +126,7 @@ const Contact = () => {
 
             {/* Contact Info */}
             <div className="space-y-8">
-              <Card className="bg-card border-border">
+              <Card className="electric-card border-0">
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
                   <p className="text-muted-foreground mb-6">
@@ -136,44 +136,53 @@ const Contact = () => {
                   
                   <div className="space-y-4">
                     <a 
-                      href="mailto:alex@example.com"
+                      href="mailto:shailendra@example.com"
                       className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Mail className="w-5 h-5" />
-                      alex@example.com
+                      <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <Mail className="w-5 h-5 text-white" />
+                      </div>
+                      shailendra@example.com
                     </a>
                     
                     <a 
-                      href="https://linkedin.com/in/alexrivera"
+                      href="https://linkedin.com/in/shailendramishra"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Linkedin className="w-5 h-5" />
+                      <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <Linkedin className="w-5 h-5 text-white" />
+                      </div>
                       LinkedIn Profile
                     </a>
                     
                     <a 
-                      href="https://github.com/alexrivera"
+                      href="https://github.com/shailendramishra"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
                     >
-                      <Github className="w-5 h-5" />
+                      <div className="w-10 h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+                        <Github className="w-5 h-5 text-white" />
+                      </div>
                       GitHub Profile
                     </a>
                   </div>
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-br from-primary/10 to-secondary/10 border-primary/20">
+              <Card className="electric-gradient border-0 text-white">
                 <CardContent className="p-6">
-                  <h4 className="text-lg font-semibold mb-3">Quick Response Guarantee</h4>
-                  <p className="text-sm text-muted-foreground mb-4">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Clock className="w-6 h-6" />
+                    <h4 className="text-lg font-semibold">Quick Response Guarantee</h4>
+                  </div>
+                  <p className="text-white/90 mb-4">
                     I typically respond to all inquiries within 24 hours. For urgent 
                     projects, I'm available for same-day consultation calls.
                   </p>
-                  <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-background">
+                  <Button className="w-full bg-white text-primary hover:bg-white/90 font-semibold">
                     Schedule a Call
                   </Button>
                 </CardContent>
