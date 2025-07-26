@@ -67,10 +67,12 @@ const About = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
               <div className="animate-slide-in">
                 <div className="neo-card p-8 text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-6 flex items-center justify-center glow-animation">
-                    <User className="w-16 h-16 text-background" />
+                  <div className="w-52 h-52 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-6 flex items-center justify-center glow-animation">
+                    {/* <User className="w-16 h-16 text-background" > */}
+                      <img loading='lazy' height={240} width={280} className='rounded-full max-w-250 mix-blend-hard-light ' src='/public/shailendramishraimg.jpeg' alt='user-image'/>
+                      {/* </User> */}
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4">Alex Rivera</h3>
+                  <h3 className="text-2xl font-semibold mb-4">Shailendra Mishra</h3>
                   <p className="text-muted-foreground">Full Stack MERN Developer</p>
                 </div>
               </div>
